@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    platform: linux/amd64
+    environment:
+      - MODE=dev
+      - PORT=7778
+    volumes:
+      - .:/api
+    ports:
+      - "7778:7778"
